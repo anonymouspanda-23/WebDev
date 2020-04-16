@@ -1,3 +1,10 @@
 /.idea/*
 /__pycache__/*
 /venv/*
+/response/__pycache__/*
+/routes/__pycache__/*
+/templates/__pycache__/*
+/public/__pycache__/*
+/public/images/__pycache__/*
+/public/scripts/__pycache__/*
+/public/styles/__pycache__/*
