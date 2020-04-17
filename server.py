@@ -8,6 +8,9 @@ from routes.main import routes
 from response.staticHandler import StaticHandler
 from response.templateHandler import TemplateHandler
 from response.badRequestHandler import BadRequestHandler
+from response.forbiddenRequestHandler import ForbiddenRequestHandler
+
+server_root = os.getcwd() + "/public"
 
 
 class Server(BaseHTTPRequestHandler):
@@ -27,7 +30,11 @@ class Server(BaseHTTPRequestHandler):
             else:
                 handler = BadRequestHandler()
         elif request_extension == ".py":
-            handler = BadRequestHandler()
+            print("Requested Resource Path: " + server_root + self.path)
+            if os.path.isfile(server_root + self.path):
+                handler = ForbiddenRequestHandler()
+            else:
+                handler = BadRequestHandler()
         else:
             handler = StaticHandler()
             handler.find(self.path)
@@ -42,6 +49,8 @@ class Server(BaseHTTPRequestHandler):
         if status_code == 200:
             content = handler.getContents()
             self.send_header('Content-type', handler.getContentType())
+        elif status_code == 403:
+            content = "403 Forbidden"
         else:
             content = "404 Not Found"
 
@@ -53,6 +62,5 @@ class Server(BaseHTTPRequestHandler):
         return bytes(content, 'UTF-8')
 
     def respond(self, opts):
-        print("Handler Data: " + str(opts['handler'].getStatus()))
         response = self.handle_http(opts['handler'].getStatus(), opts['handler'])
         self.wfile.write(response)
