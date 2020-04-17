@@ -30,8 +30,7 @@ class Server(BaseHTTPRequestHandler):
             else:
                 handler = BadRequestHandler()
         elif request_extension == ".py":
-            print("Requested Resource Path: " + server_root + self.path)
-            if os.path.isfile(server_root + self.path):
+            if os.path.isfile(server_root + self.path):  # add feature to set security of files (open/hidden)
                 handler = ForbiddenRequestHandler()
             else:
                 handler = BadRequestHandler()
