@@ -1,0 +1,5 @@
+1. Complete Mozilla Developer Wed Dev Tutorial
+2. Learn SVG vs bitmap
+3. Apply SVG
+4. Add resource security setter pages (To view)
+5. Update resource security page (Allow certain items to be downloaded)
