@@ -10,5 +10,8 @@ routes = {
     },
     "/calculator": {
         "template": "calculator.html"
+    },
+    "/recipes/hummus": {
+        "template": "hummus_recipe.html"
     }
 }
