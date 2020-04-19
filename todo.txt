@@ -1,5 +1,8 @@
 1. Complete Mozilla Developer Wed Dev Tutorial
 2. Learn SVG vs bitmap
 3. Apply SVG
-4. Add resource security setter pages (To view)
-5. Update resource security page (Allow certain items to be downloaded)
+4. Update email sharing feature in hummus_recipe.html to use logos (of Gmail, HotMail, Microsoft Outlook etc.)
+5. Add resource security setter pages (To view)
+6. Update resource security page (Allow certain items to be downloaded)
+7. Create a HTML page to allow PDF files to be viewed in browser regardless of device or setting
+8. TestLab Project

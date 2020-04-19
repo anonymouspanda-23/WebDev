@@ -1,0 +1,7 @@
+contact.html -> <h2 id="Mailing_address">Mailing address</h2>
+
+To link another page to that section:
+index.html -> <p>Want to write us a letter? Use our <a href="contacts.html#Mailing_address">mailing address</a>.</p>
+
+To link the page to that section of itself:
+contact.html -> <p>The <a href="#Mailing_address">company mailing address</a> can be found at the bottom of this page.</p>
